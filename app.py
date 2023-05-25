@@ -45,7 +45,7 @@ if user_menu == 'Overall Analysis':
     nations = df['region'].unique().shape[0]
 
     st.title("Top Statistics")
-    col1,col2,col3 = st.beta_columns(3)
+    col1,col2,col3 = st.columns(3)
     with col1:
         st.header("Editions")
         st.title(editions)
@@ -56,7 +56,7 @@ if user_menu == 'Overall Analysis':
         st.header("Sports")
         st.title(sports)
 
-    col1, col2, col3 = st.beta_columns(3)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.header("Events")
         st.title(events)
@@ -67,17 +67,17 @@ if user_menu == 'Overall Analysis':
         st.header("Athletes")
         st.title(athletes)
 
-    nations_over_time = helper.data_over_time(df,'region')
+    nations_over_time = statistical_analysis.data_over_time(df,'region')
     fig = px.line(nations_over_time, x="Edition", y="region")
     st.title("Participating Nations over the years")
     st.plotly_chart(fig)
 
-    events_over_time = helper.data_over_time(df, 'Event')
+    events_over_time = statistical_analysis.data_over_time(df, 'Event')
     fig = px.line(events_over_time, x="Edition", y="Event")
     st.title("Events over the years")
     st.plotly_chart(fig)
 
-    athlete_over_time = helper.data_over_time(df, 'Name')
+    athlete_over_time = statistical_analysis.data_over_time(df, 'Name')
     fig = px.line(athlete_over_time, x="Edition", y="Name")
     st.title("Athletes over the years")
     st.plotly_chart(fig)
@@ -107,7 +107,7 @@ if user_menu == 'Country-wise Analysis':
 
     selected_country = st.sidebar.selectbox('Select a Country',country_list)
 
-    country_df = helper.yearwise_medal_tally(df,selected_country)
+    country_df = statistical_analysis.yearwise_medal_tally(df,selected_country)
     fig = px.line(country_df, x="Year", y="Medal")
     st.title(selected_country + " Medal Tally over the years")
     st.plotly_chart(fig)
@@ -162,13 +162,13 @@ if user_menu == 'Athlete wise Analysis':
 
     st.title('Height Vs Weight')
     selected_sport = st.selectbox('Select a Sport', sport_list)
-    temp_df = helper.weight_v_height(df,selected_sport)
+    temp_df = statistical_analysis.weight_v_height(df,selected_sport)
     fig,ax = plt.subplots()
     ax = sns.scatterplot(temp_df['Weight'],temp_df['Height'],hue=temp_df['Medal'],style=temp_df['Sex'],s=60)
     st.pyplot(fig)
 
     st.title("Men Vs Women Participation Over the Years")
-    final = helper.men_vs_women(df)
+    final = statistical_analysis.men_vs_women(df)
     fig = px.line(final, x="Year", y=["Male", "Female"])
     fig.update_layout(autosize=False, width=1000, height=600)
     st.plotly_chart(fig)
