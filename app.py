@@ -119,7 +119,7 @@ if user_menu == 'Country-wise Analysis':
     st.pyplot(fig)
 
     st.title("Top 10 athletes of " + selected_country)
-    top10_df = helper.most_successful_countrywise(df,selected_country)
+    top10_df = statistical_analysis.most_successful_countrywise(df,selected_country)
     st.table(top10_df)
 
 if user_menu == 'Athlete wise Analysis':
