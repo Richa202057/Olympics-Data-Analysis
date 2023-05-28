@@ -67,8 +67,8 @@ if user_menu == 'Overall Analysis':
         st.header("Athletes")
         st.title(athletes)
 
-    nations_over_time = statistical_analysis.data_over_time(df,'region')
-    fig = px.line(nations_over_time, x="Edition", y="region")
+    nations_over_time = statistical_analysis.data_over_time(df)
+    fig = px.line(nations_over_time, x="Edition", y="No of Countries")
     st.title("Participating Nations over the years")
     st.plotly_chart(fig)
 
