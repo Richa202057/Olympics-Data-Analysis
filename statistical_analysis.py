@@ -46,7 +46,7 @@ def data_over_time(df):
     nations_over_time = df.drop_duplicates(['Year','region'])['Year'].value_counts().reset_index().sort_values('index')
     st.dataframe(nations_over_time)
     nations_over_time.rename(columns={'index': 'Edition', 'Year': 'No of Countries'}, inplace=True)
-     st.dataframe(nations_over_time)
+    st.dataframe(nations_over_time)
     return nations_over_time
 
 
