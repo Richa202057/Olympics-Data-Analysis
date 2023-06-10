@@ -114,9 +114,13 @@ if user_menu == 'Country-wise Analysis':
 
     st.title(selected_country + " excels in the following sports")
     pt = statistical_analysis.country_event_heatmap(df,selected_country)
-    fig, ax = plt.subplots(figsize=(20, 20))
-    ax = sns.heatmap(pt,annot=True)
-    st.pyplot(fig)
+    if pt is None or pt.empty:
+        st.write("No data available for selected country.")
+    else:
+        # Heatmap plot
+        fig, ax = plt.subplots(figsize=(20, 20))
+        ax = sns.heatmap(pt, annot=True)
+        st.pyplot(fig)
 
     st.title("Top 10 athletes of " + selected_country)
     top10_df = statistical_analysis.most_successful_countrywise(df,selected_country)
