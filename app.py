@@ -27,7 +27,7 @@ if user_menu == 'Medal Tally':
 
     medal_tally = statistical_analysis.fetch_medal_tally(df,selected_year,selected_country)
     if selected_year == 'Overall' and selected_country == 'Overall':
-        st.title("Overall Tally")
+        st.header(""":blue[Overall Tally]""")
     if selected_year != 'Overall' and selected_country == 'Overall':
         st.title("Medal Tally in " + str(selected_year) + " Olympics")
     if selected_year == 'Overall' and selected_country != 'Overall':
