@@ -11,7 +11,7 @@ region_df = pd.read_csv('noc_regions.csv')
 
 df = preprocessing.preprocess(df,region_df)
 
-st.title("""This text is :red[colored red]""")
+st.title("""red[Olympics Data Analysis]""")
 st.sidebar.image('olympics_pic2.jpg')
 user_menu = st.sidebar.radio(
     'Select an Option',
