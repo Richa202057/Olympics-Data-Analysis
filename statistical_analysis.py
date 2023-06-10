@@ -48,12 +48,12 @@ def data_over_time(df, col):
 
 def most_successful(df, sport):
     temp_df = df.dropna(subset=['Medal'])
-
     if sport != 'Overall':
         temp_df = temp_df[temp_df['Sport'] == sport]
 
-    x = temp_df['Name'].value_counts().reset_index().head(15).merge(df, left_on='index', right_on='Name', how='left')[
-        ['index', 'Name_x', 'Sport', 'region']].drop_duplicates('index')
+    x = temp_df['Name'].value_counts().reset_index().head(15)
+    x.rename(columns={'Name': 'index', 'count': 'Name'}, inplace=True)
+    x = x.merge(df, left_on='index', right_on='Name', how='left')[['index', 'Name_x', 'Sport', 'region']].drop_duplicates('index')
     x.rename(columns={'index': 'Name', 'Name_x': 'Medals'}, inplace=True)
     return x
 
