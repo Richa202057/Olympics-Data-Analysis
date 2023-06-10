@@ -29,7 +29,7 @@ The file noc_regions.csv contains 230 rows and 3 columns. Each row corresponds t
 3. notes
 
 # Python Web App
-This project is deployed on Streamlit Community Cloud. You can access the web app <a href="https://mohitur669-olympic-data-analysis-webapp-app-ahoyjx.streamlit.app/" target="_blank"><strong>here</strong></a>. <br> **Note:** All the graphs and charts are interactive. You can hover over the graphs and charts to get more information. You can also download the graphs and charts in png format.
+This project is deployed on Streamlit Community Cloud. You can access the web app <a href="https://richa202057-olympics-data-analysis-app-nxrl6a.streamlit.app/"><strong>here</strong></a>. <br> **Note:** All the graphs and charts are interactive. You can hover over the graphs and charts to get more information. You can also download the graphs and charts in png format.
 
 # Features of the Web App
 The web app provides a brief overview of the dataset. It provide users to choose between 4 options to explore the dataset. The options are:
