@@ -12,7 +12,7 @@ region_df = pd.read_csv('noc_regions.csv')
 df = preprocessing.preprocess(df,region_df)
 
 st.sidebar.title("Olympics Analysis")
-st.sidebar.image('olympics_pic.jpg')
+st.sidebar.image('https://www.dreamstime.com/summer-olympics-tokyo-april-japan-gold-silver-bronze-medals-xxxii-olympic-games-background-us-flag-image219852097')
 user_menu = st.sidebar.radio(
     'Select an Option',
     ('Medal Tally','Overall Analysis','Country-wise Analysis','Athlete wise Analysis')
